@@ -8,9 +8,9 @@ import { StyledEngineProvider } from '@mui/material/styles'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <StyledEngineProvider injectFirst>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+            <App />
+      </BrowserRouter>
     </StyledEngineProvider>
   </StrictMode>,
 )

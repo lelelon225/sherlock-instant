@@ -1,21 +1,19 @@
 import { Grid } from "@mui/material"
-import { Typography } from "@mui/material"
+import ErrorSection from "../organisms/ErrorSection"
+import { useNavigate } from "react-router-dom"
 
 type ErrorTemplateProps = {
     code: number
     expression: string
     message: string
-    buttonText?: string
 }
 
 function ErrorTemplate({ code, expression, message }: ErrorTemplateProps) {
+  const navigate = useNavigate()
+
   return (
     <Grid container spacing={2} className="errorContainer">
-      <Grid>
-        <Typography variant="h1">{code}</Typography>
-        <Typography variant="h1">{expression}</Typography>
-        <Typography variant="body1">{message}.</Typography>
-      </Grid>
+      <ErrorSection code={code} expression={expression} message={message} onButtonClick={() => navigate('/')} />
     </Grid>
 
   )

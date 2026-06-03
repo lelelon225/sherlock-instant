@@ -9,17 +9,19 @@
     --font-sans: "Helvetica Neue", Arial, sans-serif;
     --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-    --color-bg: #ffffff;
-    --color-text: #121212;
+    --color-bg: #b8b3b3;
+    --color-text: #ffffff;
     --color-border: #e3e5e8;
-    --color-primary: #2563eb;
+    --color-primary: #5a6989;
+    --primary-hover: #95989daa;
 
-    --space-sm: 0.8rem;
-    --space-md: 1.6rem;
-    --space-lg: 2.4rem;
+    --space-sm: 12px;
+    --space-md: 24px;
+    --space-lg: 50px;
 
-    --radius-md: 0.8rem;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --radius: 16px;
+    --button-radius: 8px;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.384);
     --max-width: 1200px;
     --transition-base: 250ms ease;
 }
@@ -34,7 +36,7 @@ body {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 18px;
     font-family: var(--font-sans);
     line-height: 1.5;
     text-rendering: optimizeLegibility;
@@ -48,23 +50,75 @@ body {
     overflow-x: hidden;
     display: flex;
     justify-content: center;
+}
+
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
 }
 
+.appBar {
+    background: var(--color-primary);
+    color: var(--color-text);
+    padding-left: var(--space-md);
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--space-lg);
+}
+
 .homeContainer {
+    display: flex;
     text-align: center;
+    justify-content: center;
     padding: var(--space-lg);
     background: var(--color-primary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: var(--max-width);
 }
 
 .errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     padding: var(--space-lg);
     background: var(--color-primary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: var(--max-width);
+}
+
+.errorContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.errorButtonSection {
+    margin: var(--space-md)
+
+}
+
+.errorButtonSection button {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 16px;
+    border-radius: var(--button-radius);
+    border-color: var(--color-border);
+    color: var(--color-text);
+    transition: background-color var(--transition-base);
+}
+
+.errorButtonSection button:hover {
+    transition: ease-out 100ms;
+    background-color: var(--primary-hover);
+    border-color: transparent;
+}
+
+.errorCodes {
+    font-size: 120px;
+    font-weight: bold;
 }
