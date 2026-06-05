@@ -1,9 +1,14 @@
 import { AppBar as MuiAppBar} from "@mui/material";
+import AppBarHeading from "../atoms/AppBarHeading";
 
-function AppBar() {
+type AppBarProps = {
+    title: string
+}
+
+function AppBar({ title }: AppBarProps) {
     return (
         <MuiAppBar position="static" color="primary" className="appBar">
-            <h1>Sherlock Instant</h1>
+            <AppBarHeading>{title}</AppBarHeading>
         </MuiAppBar>
     )
 }

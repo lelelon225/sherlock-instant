@@ -22,7 +22,7 @@
     --radius: 16px;
     --button-radius: 8px;
     --shadow: 0 10px 20px rgba(0, 0, 0, 0.384);
-    --max-width: 1200px;
+    --max-width: clamp(320px, 90vw, 1200px);
     --transition-base: 250ms ease;
 }
 
